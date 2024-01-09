@@ -10,9 +10,21 @@ namespace WebApplication1.Controllers
         private static PlayList PL = new PlayList();
 
         [HttpGet("Get all songs")]
-        public IEnumerable<Song> GetAllSongs()
+        //public IEnumerable<Song> GetAllSongs()
+        //{
+        //    return PL.Songs;
+        //}
+        public String [] GetAllSongs()
         {
-            return PL.Songs;
+            int length = PL.Songs.Count;
+            string[] result = new string[length];
+            int i = 0;
+            foreach (Song s in PL.Songs)
+            {
+                result[i] = s.ToString();
+                i++;
+            }
+            return result;
         }
         [HttpGet("Load from JSON")]
         public IActionResult FromJSON(string PlayListName)
