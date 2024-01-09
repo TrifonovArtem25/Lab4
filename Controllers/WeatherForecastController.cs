@@ -96,5 +96,14 @@ namespace WebApplication1.Controllers
             };
             return NotFound("No such song found in playlist");
         }
+        [HttpDelete("Delete playlist from SQL")]
+        public IActionResult DeleteFromSQL(String PlayListName)
+        {
+            if(PL.DeleteFromSQL(PlayListName))
+            {
+                return Ok();
+            }
+            return NotFound("No such playlist found in SQL");
+        }
     }
 }
