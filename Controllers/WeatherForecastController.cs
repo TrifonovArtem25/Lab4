@@ -7,7 +7,7 @@ namespace WebApplication1.Controllers
     [Route("[controller]/[action]")]
     public class PlayListController : ControllerBase
     {
-        private static PlayList PL = new PlayList();//duhiuh
+        private static PlayList PL = new PlayList();
 
         [HttpGet("Get all songs")]
         //public IEnumerable<Song> GetAllSongs()
