@@ -11,7 +11,7 @@ namespace WebApplication1
 
         public BloggingContext()
         {
-            var folder = Environment.SpecialFolder.LocalApplicationData;
+            var folder = Environment.SpecialFolder.Desktop;
             var path = Environment.GetFolderPath(folder);
             DbPath = System.IO.Path.Join(path, "blogging.db");
         }
